@@ -1,11 +1,10 @@
 <div *ngIf="team">
-  <h2>{{ team.name | uppercase }} Details</h2>
-  <div>
-    <span>id: </span>{{team.id}}</div>
-  <div>
-    <label>name:
-      <input [(ngModel)]="team.name" placeholder="name" />
-    </label>
+  <h2>{{ team.name | uppercase }}</h2>
+  <div class="row gallery gallery-block grid-gallery">
+    <div class="col-md-6 col-lg-4 item" *ngFor="let image of team.images">
+      <a class="lightbox" href="{{image}}">
+        <img class="img-fluid image scale-on-hover" src="{{image}}" />
+      </a>
+    </div>
   </div>
-  <button (click)="goBack()">volver</button>
 </div>

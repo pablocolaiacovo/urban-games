@@ -3,17 +3,19 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
+import { MasonryGalleryModule } from "ngx-masonry-gallery";
+
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./services/in-memory-data.service";
 
-import { AppRoutingModule } from ".//app-routing.module";
+import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from "./app.component";
 import { TeamsComponent } from "./components/teams/teams.component";
 import { TeamDetailComponent } from "./components/team-detail/team-detail.component";
 import { MessagesComponent } from "./components/messages/messages.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
-import { TeamSearchComponent } from './components/team-search/team-search.component';
+import { TeamSearchComponent } from "./components/team-search/team-search.component";
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { TeamSearchComponent } from './components/team-search/team-search.compon
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false
-    })
+    }),
+    MasonryGalleryModule
   ],
   providers: [],
   bootstrap: [AppComponent]

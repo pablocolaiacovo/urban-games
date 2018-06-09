@@ -22,12 +22,13 @@ export class TeamService {
 
   /* GET Teams from server */
   getTeams(): Observable<Team[]> {
-    return this.http
-      .get<Team[]>(this.teamsUrl)
-      .pipe(
-        tap(teams => this.log(`fetched teams`)),
-        catchError(this.handleError("getTeams", []))
-      );
+    return this.http.get<Team[]>(this.teamsUrl).pipe(
+      tap(teams => {
+        console.log(teams);
+        this.log(`fetched teams`);
+      }),
+      catchError(this.handleError("getTeams", []))
+    );
   }
 
   /** GET team by id. Return `undefined` when id not found */

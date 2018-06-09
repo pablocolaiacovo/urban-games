@@ -5,7 +5,7 @@ import { TeamService } from "../../services/team.service";
 @Component({
   selector: "app-dashboard",
   templateUrl: "./dashboard.component.html",
-  styleUrls: ["./dashboard.component.css"]
+  styleUrls: ["./dashboard.component.scss"]
 })
 export class DashboardComponent implements OnInit {
   teams: Team[] = [];
@@ -18,6 +18,6 @@ export class DashboardComponent implements OnInit {
   getTeams(): void {
     this.teamService
       .getTeams()
-      .subscribe(teams => (this.teams = teams.slice(1, 5)));
+      .subscribe(teams => (this.teams = teams.slice(0, 5)));
   }
 }

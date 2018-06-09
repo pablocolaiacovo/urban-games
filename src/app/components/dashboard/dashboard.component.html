@@ -1,11 +1,15 @@
-<app-team-search></app-team-search>
-
-<h3>Equipos</h3>
-<div class="grid grid-pad">
-  <a *ngFor="let team of teams" class="col-1-4"
-      routerLink="/detail/{{team.id}}">
-    <div class="module hero">
-      <h4>{{team.name}}</h4>
+<!-- <h3>Equipos</h3> -->
+<div class="dashboard">
+  <div class="row">
+    <div class="col-sm-6" *ngFor="let team of teams">
+      <div class="card">
+        <img class="card-img-top" src="http://lorempixel.com/200/200/" alt="Card image cap">
+        <div class="card-body text-right">
+          <h5 class="card-title text-left">{{team.name}}</h5>
+          <p class="card-text text-left">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam lobortis fringilla est eleifend faucibus. Phasellus ac orci quis ipsum pulvinar tempus dapibus eget nulla.</p>
+          <a routerLink="/detail/{{team.id}}" class="btn btn-primary">Ver más -></a>
+        </div>
+      </div>
     </div>
-  </a>
+  </div>
 </div>

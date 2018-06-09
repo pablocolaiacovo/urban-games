@@ -8,7 +8,7 @@ import { TeamService } from "../../services/team.service";
 @Component({
   selector: "app-team-search",
   templateUrl: "./team-search.component.html",
-  styleUrls: ["./team-search.component.css"]
+  styleUrls: ["./team-search.component.scss"]
 })
 export class TeamSearchComponent implements OnInit {
   teams$: Observable<Team[]>;
