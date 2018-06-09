@@ -3,8 +3,6 @@ import { NgModule } from "@angular/core";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from "@angular/common/http";
 
-import { MasonryGalleryModule } from "ngx-masonry-gallery";
-
 import { HttpClientInMemoryWebApiModule } from "angular-in-memory-web-api";
 import { InMemoryDataService } from "./services/in-memory-data.service";
 
@@ -37,8 +35,7 @@ import { TeamSearchComponent } from "./components/team-search/team-search.compon
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false
-    }),
-    MasonryGalleryModule
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
