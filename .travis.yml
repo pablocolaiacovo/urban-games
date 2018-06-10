@@ -1,20 +1,18 @@
 language: node_js
-
 node_js:
-   - node # will use latest node
-
-before_script: # commands to run before the build step
-   - npm install -g firebase-tools
-   - npm install -g --silent @angular/cli
-   - npm install
-
-script: # the build step
-   - ng build --prod
-
+  - node
+before_script:
+  - npm install -g firebase-tools
+  - npm install -g --silent @angular/cli
+  - npm install
+script:
+  - ng build --prod
 after_success:
   - firebase deploy --token $FIREBASE_TOKEN --non-interactive
-
 notifications:
-  email: # only receive email when the build status changes (someone broke the build!) 
+  email:
     on_failure: change
     on_success: change
+env:
+  global:
+    secure: XiHx8ekW+xcG1rodVgSjuqgAKOXVbQaFgOVUikdS30lIW0H/GmSo7o+Gj1XueFjHYNqJYa801IhZwTGlhhDDudm4AiTZlbPZ9xyCqSSBj/knrUsOKhxS1/B42LMoUwEQfP3N5cQQ0mWusd0da/bAW8T4DNaYqjEs0SnVOQMl+Df1YQL0Vsl6VjAJa2zU4B5EFlagPvwRCS3nh3cOufVyev+fWVpjriG/YpXaKKX1itgHQGY2DlYdAe7vGXliIfFsk5QG3YP5RiZ/OCs8c7RjKT9tEcjjvYjkEjJFEEbnaxKik/amhkYK8aZlTWXEkva1S69F2BWc9uft5HXR8WD3Sekn3RMW7Tvt5+LosbYtaBOQc36PaAtUcWPJl2Smd7CefCehJFiCmGZLe5M7b4SvGnyUZZf3Ee6+DgYHPN4PHscGjuDV4hJk4xDNVewi8rFP1o0/dGm32jRTKe83H+CITKRu9MFhggRcSlihx2oaghQ6Ws7LVvbZACnkFoQ/h6uSSY8wEggSn96Vyb/kngAHiqSJ+sb7XNdcuWTKNKh+hCF2guw/ly545gEH93OqjMN6a34mFzBsiMBanjB6rjqE5dnxAxY/F0HQbjr7GZ64oJ9N8KEygHxmLR+vGEuy/T4h+dhimvaQ7AB4yujjzU7/eJKr6rZuEqAhlUU0lZTcrrY=
