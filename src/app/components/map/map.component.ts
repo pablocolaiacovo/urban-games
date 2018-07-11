@@ -2,6 +2,7 @@ import { Component, OnInit } from "@angular/core";
 import { Team } from "../../models/Team";
 import { TeamService } from "../../services/team.service";
 import { GeocodingService } from "../../services/geocoding.service";
+import { Center } from "../../models/Center";
 
 @Component({
   selector: "app-map",
@@ -10,10 +11,12 @@ import { GeocodingService } from "../../services/geocoding.service";
 })
 export class MapComponent implements OnInit {
   // Center map. Required.
-  center: {};
+  center: Center;
   teams: Team[] = [];
   zoom: number = 11;
   city: string = "";
+  message: string;
+  warning: Boolean;
 
   constructor(
     private teamService: TeamService,
@@ -30,7 +33,7 @@ export class MapComponent implements OnInit {
       lat: -32.9384566,
       lng: -60.6369745
     };
-    
+
     this.zoom = 12;
   }
 
