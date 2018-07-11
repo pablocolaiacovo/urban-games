@@ -4,12 +4,14 @@ import { RouterModule, Routes } from "@angular/router";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { TeamsComponent } from "./components/teams/teams.component";
 import { TeamDetailComponent } from "./components/team-detail/team-detail.component";
+import { MapComponent } from "./components/map/map.component";
 
 const routes: Routes = [
-  { path: "", redirectTo: "/dashboard", pathMatch: "full" },
+  { path: "", pathMatch: "full", component: MapComponent },
   { path: "dashboard", component: DashboardComponent },
   { path: "detail/:id", component: TeamDetailComponent },
-  { path: "teams", component: TeamsComponent }
+  { path: "teams", component: TeamsComponent },
+  { path: "map", component: MapComponent}
 ];
 
 @NgModule({

@@ -1,0 +1,14 @@
+<form (ngSubmit)="onFormSubmit(city)">
+  <div class="form-group row">
+    <div class="col-sm-10">
+      <input type="text" class="form-control form-control-sm" id="cityInput" placeholder="Rosario, Santa Fe, Argentina" [(ngModel)]="city" name="city" />
+    </div>
+    <!-- <button type="submit" class="btn btn-primary pull-right">Buscar</button> -->
+  </div>
+</form>
+
+<div *ngIf="teams.length">
+  <agm-map [latitude]="center.lat" [longitude]="center.lng" [zoom]="zoom">
+    <agm-marker [latitude]="team.marker.lat" [longitude]="team.marker.lng" *ngFor="let team of teams"></agm-marker>
+  </agm-map>
+</div>

@@ -15,6 +15,9 @@ import { MessagesComponent } from "./components/messages/messages.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { TeamSearchComponent } from "./components/team-search/team-search.component";
 
+import { AgmCoreModule } from '@agm/core';
+import { MapComponent } from './components/map/map.component';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -22,7 +25,8 @@ import { TeamSearchComponent } from "./components/team-search/team-search.compon
     TeamDetailComponent,
     MessagesComponent,
     DashboardComponent,
-    TeamSearchComponent
+    TeamSearchComponent,
+    MapComponent
   ],
   imports: [
     BrowserModule,
@@ -35,6 +39,10 @@ import { TeamSearchComponent } from "./components/team-search/team-search.compon
     // Remove it when a real server is ready to receive requests.
     HttpClientInMemoryWebApiModule.forRoot(InMemoryDataService, {
       dataEncapsulation: false
+    }),
+
+    AgmCoreModule.forRoot({
+      apiKey: "AIzaSyC47paZagJhXjLL_srU30C5e0r77UNAjZk"
     })
   ],
   providers: [],

@@ -1,5 +1,19 @@
 <div *ngIf="team">
-  <h2>{{ team.name | uppercase }}</h2>
+  <h2 class="text-center">{{ team.name | uppercase }}</h2>
+  <p>
+    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at malesuada magna. Sed molestie bibendum pulvinar. Integer
+    posuere sapien nec erat tristique scelerisque. Pellentesque nec laoreet nulla. Duis a volutpat nisl, vel commodo lectus.
+    Donec in elit ultrices, fringilla metus vitae, porttitor sem. Suspendisse ornare lacinia rhoncus. Nunc auctor iaculis
+    dolor, faucibus commodo tortor. Nunc in lacus id dolor facilisis egestas sed vel felis. Vivamus porttitor ullamcorper
+    eros, a faucibus risus gravida non. Proin efficitur ullamcorper purus, eget laoreet neque blandit vitae. Mauris blandit
+    turpis eget neque efficitur eleifend. Maecenas suscipit velit a laoreet venenatis. Nullam ullamcorper tristique metus,
+    id sagittis nunc maximus et.
+  </p>
+  <hr />
+  <agm-map [latitude]="team.marker.lat" [longitude]="team.marker.lng" [zoom]="15">
+    <agm-marker [latitude]="team.marker.lat" [longitude]="team.marker.lng"></agm-marker>
+  </agm-map>
+  <hr />
   <div class="row gallery gallery-block grid-gallery">
     <div class="col-md-6 col-lg-4 item" *ngFor="let image of team.images">
       <a class="lightbox" href="{{image}}">
