@@ -1,8 +1,14 @@
-<h2>Todos los equipos</h2>
-<ul class="teams">
-  <li *ngFor="let team of teams">
-      <a routerLink="/detail/{{team.id}}">
-        <span class="badge">{{team.id}}</span> {{team.name}}
-      </a>
-  </li>
-</ul>
+<h2 class="text-center">Todos los equipos</h2>
+<div class="row">
+  <div class="col-sm-6 col-lg-4" *ngFor="let team of teams">
+    <div class="card mb-2">
+      <img class="card-img-top" src="{{team.images[0]}}" alt="{{team.name}}">
+      <div class="card-body">
+        <h5 class="card-title">{{team.name}}</h5>
+        <p class="card-text">{{team.shortDescription}}</p>
+        <a routerLink="/detail/{{team.id}}" class="btn btn-primary float-right">Ver más
+        </a>
+      </div>
+    </div>
+  </div>
+</div>

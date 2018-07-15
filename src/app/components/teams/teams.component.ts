@@ -1,4 +1,5 @@
 import { Component, OnInit } from "@angular/core";
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
 
 import { Team } from "../../models/Team";
 import { TeamService } from "../../services/team.service";
@@ -10,6 +11,7 @@ import { TeamService } from "../../services/team.service";
 })
 export class TeamsComponent implements OnInit {
   teams: Team[];
+  faArrowRight = faArrowRight;
 
   constructor(private teamService: TeamService) {}
 
