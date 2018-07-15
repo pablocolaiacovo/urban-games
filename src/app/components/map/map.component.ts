@@ -1,4 +1,6 @@
 import { Component, OnInit } from "@angular/core";
+import { faCoffee, faSearch } from '@fortawesome/free-solid-svg-icons';
+
 import { Team } from "../../models/Team";
 import { TeamService } from "../../services/team.service";
 import { GeocodingService } from "../../services/geocoding.service";
@@ -13,10 +15,11 @@ export class MapComponent implements OnInit {
   // Center map. Required.
   center: Center;
   teams: Team[] = [];
-  zoom: number = 11;
+  zoom: number = 13;
   city: string = "";
   message: string;
   warning: Boolean;
+  faSearch = faSearch;
 
   constructor(
     private teamService: TeamService,
@@ -30,11 +33,9 @@ export class MapComponent implements OnInit {
 
     // default to Rosario
     this.center = {
-      lat: -32.9384566,
-      lng: -60.6369745
+      lat: -32.94486,
+      lng: -60.651384
     };
-
-    this.zoom = 12;
   }
 
   onFormSubmit(address: string): void {
@@ -42,7 +43,10 @@ export class MapComponent implements OnInit {
       .codeAddress(address)
       .forEach((results: google.maps.GeocoderResult[]) => {
         let location = results[0].geometry.location;
-        if (this.center.lat !== location.lat() && this.center.lng !== location.lng()) {
+        if (
+          this.center.lat !== location.lat() &&
+          this.center.lng !== location.lng()
+        ) {
           // New center object: triggers OnChanges.
           this.center = {
             lat: results[0].geometry.location.lat(),

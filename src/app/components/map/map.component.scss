@@ -1,3 +1,15 @@
+@import "bootstrap/scss/bootstrap-grid.scss";
+
 agm-map {
-  height: 500px;
+  height: 750px;
+  
+  @include media-breakpoint-down(xs) {
+    height: 500px;
+  }
+}
+
+.form-inline {
+  .btn-primary {
+    margin-bottom: 1rem;
+  }
 }

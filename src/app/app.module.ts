@@ -17,6 +17,7 @@ import { TeamSearchComponent } from "./components/team-search/team-search.compon
 
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './components/map/map.component';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 
 @NgModule({
   declarations: [
@@ -43,7 +44,9 @@ import { MapComponent } from './components/map/map.component';
 
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyC47paZagJhXjLL_srU30C5e0r77UNAjZk"
-    })
+    }),
+    
+    FontAwesomeModule
   ],
   providers: [],
   bootstrap: [AppComponent]

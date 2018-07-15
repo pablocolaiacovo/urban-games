@@ -30,8 +30,8 @@ export class InMemoryDataService implements InMemoryDbService {
           "http://littleguyintheeye.com/wp-content/uploads/2014/08/nature-3.jpg"
         ],
         marker: {
-          lat: -32.9384566,
-          lng: -60.6369745
+          lat: -32.932245,
+          lng: -60.646825
         },
         post: "https://www.instagram.com/p/BjOMDnqBDqK/"
       },
@@ -39,8 +39,8 @@ export class InMemoryDataService implements InMemoryDbService {
         id: 13,
         name: "Bombasto",
         marker: {
-          lat: -32.9384566,
-          lng: -60.6369745
+          lat: -32.931328,
+          lng: -60.65135
         },
         post: "https://www.instagram.com/p/Bi8avOnhfd1/"
       }

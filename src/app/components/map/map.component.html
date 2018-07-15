@@ -1,9 +1,11 @@
 <form (ngSubmit)="onFormSubmit(city)">
-  <div class="form-group row">
-    <div class="col-sm-10">
-      <input type="text" class="form-control form-control-sm" id="cityInput" placeholder="Rosario, Santa Fe, Argentina" [(ngModel)]="city" name="city" />
+  <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Rosario, Santa Fe, Argentina" [(ngModel)]="city" name="city">
+    <div class="input-group-append">
+      <button class="btn btn-outline-secondary" type="subimt" id="button-addon2">
+        <fa-icon [icon]="faSearch"></fa-icon>
+      </button>
     </div>
-    <!-- <button type="submit" class="btn btn-primary pull-right">Buscar</button> -->
   </div>
 </form>
 
