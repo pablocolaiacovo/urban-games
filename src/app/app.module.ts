@@ -18,6 +18,7 @@ import { TeamSearchComponent } from "./components/team-search/team-search.compon
 import { AgmCoreModule } from '@agm/core';
 import { MapComponent } from './components/map/map.component';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { OwlModule } from 'ngx-owl-carousel';
 
 @NgModule({
   declarations: [
@@ -46,7 +47,8 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
       apiKey: "AIzaSyC47paZagJhXjLL_srU30C5e0r77UNAjZk"
     }),
     
-    FontAwesomeModule
+    FontAwesomeModule,
+    OwlModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { faCoffee, faSearch } from '@fortawesome/free-solid-svg-icons';
+import { faSearch } from '@fortawesome/free-solid-svg-icons';
 
 import { Team } from "../../models/Team";
 import { TeamService } from "../../services/team.service";
