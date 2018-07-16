@@ -11,6 +11,16 @@
 
 <div *ngIf="teams.length">
   <agm-map [latitude]="center.lat" [longitude]="center.lng" [zoom]="zoom">
-    <agm-marker [latitude]="team.marker.lat" [longitude]="team.marker.lng" *ngFor="let team of teams"></agm-marker>
+    <agm-marker [latitude]="team.marker.lat" [longitude]="team.marker.lng" *ngFor="let team of teams">
+      <agm-info-window [maxWidth]="250">
+        <div class="card">
+          <h5 class="card-header">{{team.name}}</h5>
+          <div class="card-body">
+            <p class="card-text">{{team.shortDescription}}</p>
+            <a routerLink="/detail/{{team.id}}" class="float-right">Ver más >></a>
+          </div>
+        </div>
+      </agm-info-window>
+    </agm-marker>
   </agm-map>
 </div>

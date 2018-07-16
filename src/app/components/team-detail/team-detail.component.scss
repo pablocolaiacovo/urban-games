@@ -5,6 +5,10 @@ agm-map {
 
   @include media-breakpoint-down(xs) {
     height: 250px;
+
+    .card-body {
+      max-width: 250px;
+    }
   }
 }
 
