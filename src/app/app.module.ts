@@ -15,10 +15,33 @@ import { MessagesComponent } from "./components/messages/messages.component";
 import { DashboardComponent } from "./components/dashboard/dashboard.component";
 import { TeamSearchComponent } from "./components/team-search/team-search.component";
 
-import { AgmCoreModule } from '@agm/core';
-import { MapComponent } from './components/map/map.component';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { OwlModule } from 'ngx-owl-carousel';
+import { AgmCoreModule } from "@agm/core";
+import { MapComponent } from "./components/map/map.component";
+import { FontAwesomeModule } from "@fortawesome/angular-fontawesome";
+import { OwlModule } from "ngx-owl-carousel";
+import {
+  AuthMethods,
+  AuthProvider,
+  AuthProviderWithCustomConfig,
+  CredentialHelper,
+  FirebaseUIAuthConfig,
+  FirebaseUIModule
+} from "firebaseui-angular";
+import { AngularFireModule } from "angularfire2";
+import { environment } from "../environments/environment";
+import { AngularFireAuthModule } from "angularfire2/auth";
+import { LoginComponent } from './components/login/login.component';
+import { NavComponent } from './components/nav/nav.component';
+
+const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
+  providers: [AuthProvider.Google, AuthProvider.Password, AuthProvider.Phone],
+  method: AuthMethods.Redirect,
+  tos: "<your-tos-link>",
+  credentialHelper: CredentialHelper.AccountChooser,
+  autoUpgradeAnonymousUsers: true,
+  disableSignInSuccessCallback: true,
+  signInSuccessUrl: '/'
+};
 
 @NgModule({
   declarations: [
@@ -28,7 +51,9 @@ import { OwlModule } from 'ngx-owl-carousel';
     MessagesComponent,
     DashboardComponent,
     TeamSearchComponent,
-    MapComponent
+    MapComponent,
+    LoginComponent,
+    NavComponent
   ],
   imports: [
     BrowserModule,
@@ -46,9 +71,12 @@ import { OwlModule } from 'ngx-owl-carousel';
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyC47paZagJhXjLL_srU30C5e0r77UNAjZk"
     }),
-    
+
     FontAwesomeModule,
-    OwlModule
+    OwlModule,
+    AngularFireModule.initializeApp(environment.firebase),
+    AngularFireAuthModule,
+    FirebaseUIModule.forRoot(firebaseUiAuthConfig)
   ],
   providers: [],
   bootstrap: [AppComponent]
