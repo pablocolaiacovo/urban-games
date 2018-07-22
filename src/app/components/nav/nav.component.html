@@ -11,13 +11,13 @@
       </li>
     </ul>
     <ul class="navbar-nav">
-      <li *ngIf="authService.isLoggedIn" class="nav-item">
+      <li *ngIf="isLoggedIn" class="nav-item">
         <span class="navbar-text">
-          {{authService.user.displayName || authService.user.email}}
+          {{user.displayName || user.email}}
           <a *ngIf="afAuth.user" (click)="logout()" class="logout">(Logout)</a>
         </span>
       </li>
-      <li *ngIf="!authService.isLoggedIn" class="nav-item">
+      <li *ngIf="!isLoggedIn" class="nav-item">
         <a class="nav-link" routerLink="/login">Logueate!</a>
       </li>
     </ul>

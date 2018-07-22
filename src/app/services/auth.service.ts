@@ -8,14 +8,11 @@ import { User } from "firebase";
   providedIn: "root"
 })
 export class AuthService {
-  user: User;
+  user: Observable<User | null>;
   isLoggedIn: boolean = false;
 
   constructor(private afAuth: AngularFireAuth, private router: Router) {
-    this.afAuth.authState.subscribe(user => {
-      this.user = user;
-      this.isLoggedIn = user !== null;
-    });
+    this.user = this.afAuth.authState;
   }
 
   logOut(): any {
