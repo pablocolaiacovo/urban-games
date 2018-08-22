@@ -17,7 +17,7 @@ export class InMemoryDataService implements InMemoryDbService {
           lat: -32.9384566,
           lng: -60.6369745
         },
-        post: "https://www.instagram.com/p/Bk5AO12naju/",
+        instagram: "https://www.instagram.com/p/Bk5AO12naju/",
         shortDescription:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus congue ante a maximus.",
         description:
@@ -36,7 +36,7 @@ export class InMemoryDataService implements InMemoryDbService {
           lat: -32.932245,
           lng: -60.646825
         },
-        post: "https://www.instagram.com/p/BjOMDnqBDqK/",
+        instagram: "https://www.instagram.com/p/BjOMDnqBDqK/",
         shortDescription:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus congue ante a maximus. Etiam vitae nunc id ante euismod elementum. Suspendisse vel lobortis massa.",
         description:
@@ -49,7 +49,7 @@ export class InMemoryDataService implements InMemoryDbService {
           lat: -32.931328,
           lng: -60.65135
         },
-        post: "https://www.instagram.com/p/Bi8avOnhfd1/",
+        instagram: "https://www.instagram.com/p/Bi8avOnhfd1/",
         shortDescription:
           "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed maximus congue ante a maximus. Etiam vitae nunc id ante euismod elementum. Suspendisse vel lobortis massa.",
         images: [

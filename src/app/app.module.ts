@@ -22,7 +22,6 @@ import { OwlModule } from "ngx-owl-carousel";
 import {
   AuthMethods,
   AuthProvider,
-  AuthProviderWithCustomConfig,
   CredentialHelper,
   FirebaseUIAuthConfig,
   FirebaseUIModule
@@ -32,6 +31,7 @@ import { environment } from "../environments/environment";
 import { AngularFireAuthModule } from "angularfire2/auth";
 import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
+import { AddTeamComponent } from './components/add-team/add-team.component';
 
 const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
   providers: [AuthProvider.Google, AuthProvider.Password, AuthProvider.Phone],
@@ -53,7 +53,8 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
     TeamSearchComponent,
     MapComponent,
     LoginComponent,
-    NavComponent
+    NavComponent,
+    AddTeamComponent
   ],
   imports: [
     BrowserModule,

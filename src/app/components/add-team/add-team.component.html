@@ -1,0 +1,29 @@
+<form #teamForm="ngForm" (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <label for="name">Nombre</label>
+    <input type="text" class="form-control" id="name" name="name" aria-describedby="nameHelp" placeholder="Nombre del equipo"
+      [(ngModel)]="model.name" required />
+  </div>
+  <div class="form-group">
+    <label for="shortDescription">Descripción Corta</label>
+    <textarea class="form-control" id="shortDescription" name="shortDescription" aria-describedby="shortDescriptionHelp" placeholder="Descripción Corta"
+      [(ngModel)]="model.shortDescription"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="description">Descripción</label>
+    <textarea class="form-control" id="description" aria-describedby="descriptionHelp" placeholder="Descripción" name="description"
+      [(ngModel)]="model.description"></textarea>
+  </div>
+  <div class="form-group">
+    <label for="instagram">Instagram</label>
+    <input type="text" class="form-control" id="instagram" name="instagram" aria-describedby="nameHelp" placeholder="Instagram"
+      [(ngModel)]="model.instagram" />
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="!teamForm.form.valid">Guardar</button>
+  <button type="button" class="btn btn-default" (click)="resetTeam(); teamForm.reset()">Reiniciar</button>
+
+  <div class="bs-callout bs-callout-danger" *ngIf="!success && message.length">
+    <p>{{message}}</p>
+  </div>
+</form>

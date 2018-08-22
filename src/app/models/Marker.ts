@@ -1,4 +1,4 @@
-export class Center {
+export class Marker {
     lat: number;
     lng: number;
 }

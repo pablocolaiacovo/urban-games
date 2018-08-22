@@ -4,7 +4,7 @@ import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { Team } from "../../models/Team";
 import { TeamService } from "../../services/team.service";
 import { GeocodingService } from "../../services/geocoding.service";
-import { Center } from "../../models/Center";
+import { Marker } from "../../models/Marker";
 
 @Component({
   selector: "app-map",
@@ -13,7 +13,7 @@ import { Center } from "../../models/Center";
 })
 export class MapComponent implements OnInit {
   // Center map. Required.
-  center: Center;
+  center: Marker;
   teams: Team[] = [];
   zoom: number = 13;
   city: string = "";

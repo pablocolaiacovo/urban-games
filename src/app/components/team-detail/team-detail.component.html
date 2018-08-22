@@ -5,7 +5,7 @@
   </p>
   <div class="row">
     <div class="col-md-6">
-      <owl-carousel [options]="carouselOptions" [items]="team.images" [carouselClasses]="['owl-theme', 'sliding']">
+      <owl-carousel [options]="carouselOptions" [items]="team.images" [carouselClasses]="['owl-theme', 'sliding']" *ngIf="team.images && team.images.length">
         <div class="item" *ngFor="let image of team.images">
           <div class="thumbnail-image" *ngIf="!isVideo(image)">
             <img src="{{image}}" alt="{{team.name}}">
@@ -16,7 +16,7 @@
         </div>
       </owl-carousel>
     </div>
-    <div class="col-md-6">
+    <div class="col-md-6" *ngIf="team.marker">
       <agm-map [latitude]="team.marker.lat" [longitude]="team.marker.lng" [zoom]="15">
         <agm-marker [latitude]="team.marker.lat" [longitude]="team.marker.lng"></agm-marker>
       </agm-map>
