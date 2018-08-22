@@ -5,7 +5,7 @@ export class Team {
   name: string;
   images: Array<string>[];
   marker: Marker;
-  post: string;
+  instagram: string;
   shortDescription: string;
   description: string;
   address: string; 
