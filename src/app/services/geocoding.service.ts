@@ -74,7 +74,7 @@ export class GeocodingService {
             } else {
               console.log(
                 "Geocoding service: geocode was not successful for the following reason: " +
-                  status
+                status
               );
               observer.error(status);
             }

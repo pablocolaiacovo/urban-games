@@ -7,7 +7,7 @@
   <div class="form-group">
     <label for="shortDescription">Descripción Corta</label>
     <textarea class="form-control" id="shortDescription" name="shortDescription" aria-describedby="shortDescriptionHelp" placeholder="Descripción Corta"
-      [(ngModel)]="model.shortDescription"></textarea>
+      [(ngModel)]="model.shortDescription" required></textarea>
   </div>
   <div class="form-group">
     <label for="description">Descripción</label>
@@ -15,15 +15,29 @@
       [(ngModel)]="model.description"></textarea>
   </div>
   <div class="form-group">
+    <label for="address">Dirección</label>
+    <input type="text" class="form-control" name="address" id="address" placeholder="Dirección" [(ngModel)]="model.address" aria-describedby="addressHelpBlock"
+      required />
+    <small id="addressHelpBlock" class="form-text text-muted">
+      El formato de la dirección debe ser "Calle 123, Ciudad, Provincia, País"
+    </small>
+  </div>
+  <div class="form-group">
     <label for="instagram">Instagram</label>
-    <input type="text" class="form-control" id="instagram" name="instagram" aria-describedby="nameHelp" placeholder="Instagram"
-      [(ngModel)]="model.instagram" />
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text" id="instagramPrepend">@</span>
+      </div>
+      <input type="text" class="form-control" id="instagram" name="instagram" aria-describedby="nameHelp" placeholder="Instagram"
+        [(ngModel)]="model.instagram" aria-describedby="instagramPrepend" />
+    </div>
   </div>
 
   <button type="submit" class="btn btn-primary" [disabled]="!teamForm.form.valid">Guardar</button>
   <button type="button" class="btn btn-default" (click)="resetTeam(); teamForm.reset()">Reiniciar</button>
 
-  <div class="bs-callout bs-callout-danger" *ngIf="!success && message.length">
+  <div class="bd-callout bd-callout-warning" *ngIf="!success && message.length">
+    <h5>Se ha producido un error!</h5>
     <p>{{message}}</p>
   </div>
 </form>

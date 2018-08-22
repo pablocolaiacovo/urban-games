@@ -24,7 +24,7 @@ export class MapComponent implements OnInit {
   constructor(
     private teamService: TeamService,
     private geocodingService: GeocodingService
-  ) {}
+  ) { }
 
   getTeams(): void {
     this.teamService.getTeams().subscribe(teams => {

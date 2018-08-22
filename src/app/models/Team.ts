@@ -7,5 +7,6 @@ export class Team {
   marker: Marker;
   post: string;
   shortDescription: string;
-  description: string 
+  description: string;
+  address: string; 
 }
