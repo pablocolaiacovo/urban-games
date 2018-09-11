@@ -26,9 +26,9 @@ import {
   FirebaseUIAuthConfig,
   FirebaseUIModule
 } from "firebaseui-angular";
-import { AngularFireModule } from "angularfire2";
+import { AngularFireModule } from "@angular/fire";
 import { environment } from "../environments/environment";
-import { AngularFireAuthModule } from "angularfire2/auth";
+import { AngularFireAuthModule } from "@angular/fire/auth";
 import { LoginComponent } from './components/login/login.component';
 import { NavComponent } from './components/nav/nav.component';
 import { AddTeamComponent } from './components/add-team/add-team.component';
@@ -82,4 +82,4 @@ const firebaseUiAuthConfig: FirebaseUIAuthConfig = {
   providers: [],
   bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }
